@@ -45,4 +45,7 @@ MIDDLEWARES = [
 # Throttling Configuration
 THROTTLING = Throttle(rate=5, duration=timedelta(minutes=1))
 
+# Dynamic Module Loader
+DYN_MODULE = True
+
 URLs = 'core.urls.url_routing'

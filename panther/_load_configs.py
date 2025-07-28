@@ -26,6 +26,7 @@ __all__ = (
     'load_authentication_class',
     'load_auto_reformat',
     'load_background_tasks',
+    'load_dyn_module',
     'load_configs_module',
     'load_database',
     'load_log_queries',
@@ -212,6 +213,11 @@ def load_background_tasks(_configs: dict, /) -> None:
     if _configs.get('BACKGROUND_TASKS'):
         config.BACKGROUND_TASKS = True
         _background_tasks.initialize()
+
+
+def load_dyn_module(_configs: dict, /) -> None:
+    if _configs.get('DYN_MODULE'):
+        config.DYN_MODULE = True
 
 
 def load_other_configs(_configs: dict, /) -> None:
