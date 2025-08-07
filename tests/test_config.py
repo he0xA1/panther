@@ -79,6 +79,7 @@ class TestConfig(TestCase):
             URLS, \
             WEBSOCKET_CONNECTIONS, \
             BACKGROUND_TASKS, \
+            DYN_MODULE, \
             HAS_WS, \
             TIMEZONE, \
             TEMPLATES_DIR, \
@@ -100,6 +101,7 @@ class TestConfig(TestCase):
         WS_AUTHENTICATION = 'panther.authentications.CookieJWTAuthentication'
         JWT_CONFIG = {'life_time': timedelta(seconds=20)}
         BACKGROUND_TASKS = True
+        DYN_MODULE = True
         TIMEZONE = 'Asia/Tehran'
         TEMPLATES_DIR = 'templates/'
         AUTO_REFORMAT = True
@@ -126,6 +128,7 @@ class TestConfig(TestCase):
         assert config.URLS == {}
         assert config.WEBSOCKET_CONNECTIONS is None
         assert config.BACKGROUND_TASKS is False
+        assert config.DYN_MODULE is True
         assert config.HAS_WS is True
         assert config.TIMEZONE == 'UTC'
         assert config.TEMPLATES_DIR == '.'
@@ -154,6 +157,7 @@ class TestConfig(TestCase):
             'URLS',
             'WEBSOCKET_CONNECTIONS',
             'BACKGROUND_TASKS',
+            'DYN_MODULE',
             'HAS_WS',
             'TIMEZONE',
             'TEMPLATES_DIR',
@@ -182,6 +186,7 @@ class TestConfig(TestCase):
         assert {'dummy': DummyAPI, 'ws': DummyWS} == config.URLS
         assert isinstance(config.WEBSOCKET_CONNECTIONS, WebsocketConnections)
         assert config.BACKGROUND_TASKS is True
+        assert config.DYN_MODULE is True
         assert config.HAS_WS is True
         assert config.TIMEZONE == 'Asia/Tehran'
         assert config.TEMPLATES_DIR == 'templates/'
@@ -231,6 +236,7 @@ class TestConfig(TestCase):
             WS_AUTHENTICATION, \
             JWT_CONFIG, \
             MODELS, \
+            DYN_MODULE, \
             FLAT_URLS, \
             URLS, \
             WEBSOCKET_CONNECTIONS, \
@@ -255,6 +261,7 @@ class TestConfig(TestCase):
         AUTHENTICATION = 'panther.authentications.QueryParamJWTAuthentication'
         WS_AUTHENTICATION = 'panther.authentications.CookieJWTAuthentication'
         JWT_CONFIG = {'life_time': timedelta(seconds=20)}
+        DYN_MODULE = True
         BACKGROUND_TASKS = True
         TIMEZONE = 'Asia/Tehran'
         TEMPLATES_DIR = 'templates/'
@@ -285,6 +292,7 @@ class TestConfig(TestCase):
         assert config.URLS == {}
         assert config.WEBSOCKET_CONNECTIONS is None
         assert config.BACKGROUND_TASKS is False
+        assert config.DYN_MODULE is True
         assert config.HAS_WS is False
         assert config.TIMEZONE == 'UTC'
         assert config.TEMPLATES_DIR == '.'

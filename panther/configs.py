@@ -68,6 +68,7 @@ class Config:
     URLS: dict = field(default_factory=dict)
     WEBSOCKET_CONNECTIONS: Callable | None = None
     BACKGROUND_TASKS: bool = False
+    DYN_MODULE: bool = True
     HAS_WS: bool = False
     TIMEZONE: str = 'UTC'
     TEMPLATES_DIR: str | list[str] = '.'
